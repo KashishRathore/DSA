@@ -23,12 +23,17 @@ public class Functions_Methods {
     }
 
     // Factorial
-    public static int calculateFactorial(int n) {
+    public static void calculateFactorial(int n) {
         int fact = 1;
+        if( n < 0 ){
+            System.out.println("Invalid Number");
+            return;
+        }
         for (int i = n; i >= 1; i--) {
             fact = fact * i;
         }
-        return fact;
+        System.out.println("Factorial of number is : " + fact);
+        return;
     }
 
     public static void main(String[] args) {
@@ -47,7 +52,7 @@ public class Functions_Methods {
         System.out.println("Multiply of Two numbers is : " + multiply);
 
         int n = sc.nextInt();
-        int factorial = calculateFactorial(n);
-        System.out.println("Factorial of number is : " + factorial);
+        calculateFactorial(n);
+
     }
 }
