@@ -1,6 +1,6 @@
 package Java;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Functions_Methods {
     // Functions save in the form of stack at the memory(stack formation)
