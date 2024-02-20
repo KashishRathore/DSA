@@ -1,4 +1,3 @@
-package Java;
 public class Advanced_Pattern {
     public static void main(String[] args) {
         System.out.println(" Butterfly Rhombus");
