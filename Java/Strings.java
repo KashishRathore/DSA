@@ -32,6 +32,6 @@ public class Strings {
         String sentence = "My name is Kashish" ; 
         String subStr = sentence.substring(7);
         //String subStr = sentence.substring(7, sentence.length());
-        System.out.println(subStr);
+        System.out.println(subStr);    
     }
 }
