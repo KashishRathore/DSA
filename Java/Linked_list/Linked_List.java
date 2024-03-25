@@ -102,6 +102,25 @@ class LL {
         return size;
     }
 
+    //reverse
+    public void reverseIterate(){
+        if(head == null || head.next == null){
+            return;
+        }
+        Node prevNode = head;
+        Node currNode = head.next;
+        while(currNode != null){
+           Node nextNode = currNode.next;
+           currNode.next = prevNode;
+
+           // update
+           prevNode = currNode;
+           currNode = nextNode;
+        }
+        head.next = null;
+        head = prevNode;
+    }
+
     public class Linked_List {
         public static void main(String[] args) {
             // for creating linked list creating an object of own class
@@ -126,6 +145,14 @@ class LL {
             System.out.println(list.getSize());
             list.addFirst("This");
             System.out.println(list.getSize());
+
+            list.addLast("1");
+            list.addLast("2");
+            list.addLast("3");
+            list.addLast("4");
+            list.printList();
+            list.reverseIterate();
+            list.printList();
         }
     }
 }
