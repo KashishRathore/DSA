@@ -121,6 +121,17 @@ class LL {
         head = prevNode;
     }
 
+    public Node reverseRecursive(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
+
     public class Linked_List {
         public static void main(String[] args) {
             // for creating linked list creating an object of own class
@@ -152,6 +163,9 @@ class LL {
             list.addLast("4");
             list.printList();
             list.reverseIterate();
+            list.printList();
+
+            list.head = list.reverseRecursive(list.head);
             list.printList();
         }
     }
