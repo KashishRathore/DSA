@@ -19,6 +19,13 @@ public class Hashmap {
 
         System.out.println(map);
 
+        //get
+        System.out.println(map.get("China"));
+
+        //Size
+        System.out.println(map.size());
+
+
         // Two cases made in map.put() 1.exist data -> update the value 2. doesn't exist
         // data -> new pair is inserted
         map.put("China", 180);
