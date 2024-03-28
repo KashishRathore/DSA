@@ -7,7 +7,9 @@ public class Selection_Sort {
         }
         System.out.println();
     }
-
+    
+    // time complexity = O(n^2)
+    // Not that much good efficient for sorting purpose
     public static void main(String[] args) {
         int arr[] = { 7, 8, 3, 1, 2 };
         // One swap per iteration
