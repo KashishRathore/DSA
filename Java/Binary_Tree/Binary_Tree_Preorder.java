@@ -1,6 +1,6 @@
 package Binary_Tree;
 
-//pre order -> root --> left order --> right order
+//pre order -> root --> left subtree --> right subtree
 
 public class Binary_Tree_Preorder {
     static class Node{
