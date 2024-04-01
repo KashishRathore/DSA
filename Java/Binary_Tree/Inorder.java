@@ -2,7 +2,7 @@ package Binary_Tree;
 
 // Inorder -> Left subtree --> Root --> Right subtree
 
-public class Binary_Tree_Inorder {
+public class Inorder {
     static class Node {
         int data;
         Node left;

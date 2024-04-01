@@ -8,7 +8,7 @@ import java.util.Queue;
 // 2  3
 // 4  5  6
 
-public class Level_Order_Traversal {
+public class Levelorder_Traversal {
     static class Node{
         int data;
         Node left;

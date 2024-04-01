@@ -1,8 +1,8 @@
 package Binary_Tree;
 
-//pre order -> root --> left subtree --> right subtree
+//post order -> left subtree --> right subtree --> root
 
-public class Binary_Tree_Preorder {
+public class Postorder {
     static class Node{
         int data;
         Node left;
@@ -34,9 +34,11 @@ public class Binary_Tree_Preorder {
         if(root == null){
             return;
         }
-        System.out.print(root.data + " ");
+
         preOrder(root.left);
         preOrder(root.right);
+        System.out.print(root.data + " ");
+
     }
     public static void main(String[] args) {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
@@ -48,3 +50,5 @@ public class Binary_Tree_Preorder {
 
     }
 }
+
+
