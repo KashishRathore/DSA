@@ -29,13 +29,13 @@ public class Count_Of_Node {
         }
     }
 
-    public static int CountOfNodes(Node root){
+    public static int countOfNodes(Node root){
         if(root == null){
             return 0;
         }
 
-        int leftNodes = CountOfNodes(root.left);
-        int rightNodes = CountOfNodes(root.right);
+        int leftNodes = countOfNodes(root.left);
+        int rightNodes = countOfNodes(root.right);
 
         return leftNodes + rightNodes + 1;
     }
@@ -44,6 +44,6 @@ public class Count_Of_Node {
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTreeNode(nodes);
 
-        System.out.println(CountOfNodes(root));
+        System.out.println(countOfNodes(root));
     }
 }
