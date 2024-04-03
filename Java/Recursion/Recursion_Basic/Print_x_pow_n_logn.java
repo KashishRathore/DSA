@@ -12,8 +12,7 @@ public class Print_x_pow_n_logn {
         // if n is even
         if (n % 2 == 0) {
             return power(x, n / 2) * power(x, n / 2);
-        }
-        else{
+        } else {
             return power(x, n / 2) * power(x, n / 2) * x;
         }
     }

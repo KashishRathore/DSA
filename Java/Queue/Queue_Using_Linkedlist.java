@@ -1,19 +1,19 @@
 package Queue;
 
 public class Queue_Using_Linkedlist {
-    static class Node{
+    static class Node {
         int data;
         Node next;
 
-        Node(int data){
+        Node(int data) {
             this.data = data;
             next = null;
         }
     }
+
     static class Queue {
         static Node head = null;
         static Node tail = null;
-        
 
         public static boolean isEmpty() {
             return head == null && tail == null;
@@ -22,7 +22,7 @@ public class Queue_Using_Linkedlist {
         // enqueue
         public static void add(int data) {
             Node newNode = new Node(data);
-            if(tail == null){
+            if (tail == null) {
                 tail = head = newNode;
                 return;
             }
@@ -38,13 +38,13 @@ public class Queue_Using_Linkedlist {
             }
 
             int front = head.data;
-            if(head == tail){
+            if (head == tail) {
                 tail = null;
             }
             head = head.next;
 
             return front;
-     
+
         }
 
         // peek

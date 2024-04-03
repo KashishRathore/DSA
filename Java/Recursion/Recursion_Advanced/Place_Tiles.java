@@ -5,25 +5,26 @@ package Recursion.Recursion_Advanced;
 
 public class Place_Tiles {
 
-    public static int placeTiles(int n, int m){
-        if( n == m){
+    public static int placeTiles(int n, int m) {
+        if (n == m) {
             return 2;
         }
 
-        if(n < m){
+        if (n < m) {
             return 1;
         }
 
         // Vertically
-        int verticalPlacements = placeTiles(n-m,m);
+        int verticalPlacements = placeTiles(n - m, m);
 
-        //Horizontally
-        int horizontalPlacement = placeTiles(n-1, m);
+        // Horizontally
+        int horizontalPlacement = placeTiles(n - 1, m);
 
-        return verticalPlacements + horizontalPlacement ;
+        return verticalPlacements + horizontalPlacement;
     }
+
     public static void main(String[] args) {
-        int n = 4 , m = 2;
+        int n = 4, m = 2;
         System.out.println(placeTiles(n, m));
     }
 }
