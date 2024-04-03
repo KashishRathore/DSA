@@ -1,10 +1,11 @@
 package Linked_list;
+
 class LL {
     Node head;
     // to finding the size of node
     private int size;
 
-    LL(){
+    LL() {
         this.size = 0;
     }
 
@@ -63,9 +64,9 @@ class LL {
         System.out.println("NULL");
     }
 
-    //delete -> first
-    public void deleteFirst(){
-        if(head == null){
+    // delete -> first
+    public void deleteFirst() {
+        if (head == null) {
             System.out.println("The list is empty");
             return;
         }
@@ -73,15 +74,15 @@ class LL {
         head = head.next;
     }
 
-    //delete -> last
-    public void deleteLast(){
-        if(head == null){
+    // delete -> last
+    public void deleteLast() {
+        if (head == null) {
             System.out.println("The list is empty");
             return;
         }
 
         size--;
-        if(head.next == null){
+        if (head.next == null) {
             head = null;
             return;
         }
@@ -89,7 +90,7 @@ class LL {
         Node secondLast = head;
         Node lastNode = head.next;
 
-        while (lastNode.next != null){
+        while (lastNode.next != null) {
             lastNode = lastNode.next;
             secondLast = secondLast.next;
         }
@@ -97,32 +98,32 @@ class LL {
         secondLast.next = null;
     }
 
-    //size
-    public int getSize(){
+    // size
+    public int getSize() {
         return size;
     }
 
-    //reverse
-    public void reverseIterate(){
-        if(head == null || head.next == null){
+    // reverse
+    public void reverseIterate() {
+        if (head == null || head.next == null) {
             return;
         }
         Node prevNode = head;
         Node currNode = head.next;
-        while(currNode != null){
-           Node nextNode = currNode.next;
-           currNode.next = prevNode;
+        while (currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
 
-           // update
-           prevNode = currNode;
-           currNode = nextNode;
+            // update
+            prevNode = currNode;
+            currNode = nextNode;
         }
         head.next = null;
         head = prevNode;
     }
 
-    public Node reverseRecursive(Node head){
-        if(head == null || head.next == null){
+    public Node reverseRecursive(Node head) {
+        if (head == null || head.next == null) {
             return head;
         }
         Node newHead = reverseRecursive(head.next);

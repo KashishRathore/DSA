@@ -57,17 +57,18 @@ public class Diameter_Of_Tree {
     }
 
     // Approach 2 : O(n)
-    static class TreeInfo{
+    static class TreeInfo {
         int ht;
         int diam;
-        TreeInfo(int ht, int diam){
+
+        TreeInfo(int ht, int diam) {
             this.ht = ht;
             this.diam = diam;
         }
     }
 
     public static TreeInfo diameter2(Node root) {
-        if( root == null){
+        if (root == null) {
             return new TreeInfo(0, 0);
         }
 

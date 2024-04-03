@@ -6,7 +6,7 @@ import java.util.Iterator;
 public class Hashset {
     // Set does'nt allowed duplicate
     // Use when time complexity should reduce or making code efficient
-    //It may be jumbled or may order be changed
+    // It may be jumbled or may order be changed
 
     public static void main(String[] args) {
         // Creating
@@ -17,7 +17,7 @@ public class Hashset {
         set.add(2);
         set.add(3);
         set.add(1);
-        //Print all elements
+        // Print all elements
         System.out.println(set);
 
         // Size
@@ -31,11 +31,12 @@ public class Hashset {
             System.out.println("Set does not contains Six");
         }
 
-        //Iterator
+        // Iterator
         Iterator it = set.iterator();
-        //hasNext function -> return true or false if iterator has next value then it returns true and if not it return false
-        //next fuction -> return next value after null and other next
-        while(it.hasNext()){
+        // hasNext function -> return true or false if iterator has next value then it
+        // returns true and if not it return false
+        // next fuction -> return next value after null and other next
+        while (it.hasNext()) {
             System.out.println(it.next());
         }
 

@@ -29,8 +29,8 @@ public class Count_Of_Node {
         }
     }
 
-    public static int countOfNodes(Node root){
-        if(root == null){
+    public static int countOfNodes(Node root) {
+        if (root == null) {
             return 0;
         }
 
@@ -39,8 +39,9 @@ public class Count_Of_Node {
 
         return leftNodes + rightNodes + 1;
     }
+
     public static void main(String[] args) {
-        int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+        int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTreeNode(nodes);
 

@@ -19,12 +19,11 @@ public class Hashmap {
 
         System.out.println(map);
 
-        //get
+        // get
         System.out.println(map.get("China"));
 
-        //Size
+        // Size
         System.out.println(map.size());
-
 
         // Two cases made in map.put() 1.exist data -> update the value 2. doesn't exist
         // data -> new pair is inserted
@@ -62,20 +61,19 @@ public class Hashmap {
         }
         System.out.println();
 
-
-        //3rd method
-        for( Map.Entry<String , Integer> ele : map.entrySet()){
+        // 3rd method
+        for (Map.Entry<String, Integer> ele : map.entrySet()) {
             System.out.println(ele.getKey());
             System.out.println(ele.getValue());
         }
 
-        //4th method -> for keys
+        // 4th method -> for keys
         Set<String> keys = map.keySet();
-        for(String key : keys){
+        for (String key : keys) {
             System.out.println(key + " " + map.get(key) + " ");
         }
 
-        //Delete
+        // Delete
         map.remove("China");
         System.out.println(map);
     }
