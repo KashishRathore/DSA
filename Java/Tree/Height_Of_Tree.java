@@ -1,6 +1,6 @@
-package Binary_Tree;
+package Tree;
 
-public class Count_Of_Node {
+public class Height_Of_Tree {
     static class Node {
         int data;
         Node left;
@@ -29,15 +29,17 @@ public class Count_Of_Node {
         }
     }
 
-    public static int countOfNodes(Node root) {
+    public static int height(Node root) {
         if (root == null) {
             return 0;
         }
 
-        int leftNodes = countOfNodes(root.left);
-        int rightNodes = countOfNodes(root.right);
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
 
-        return leftNodes + rightNodes + 1;
+        int myHeight = Math.max(leftHeight, rightHeight) + 1;
+
+        return myHeight;
     }
 
     public static void main(String[] args) {
@@ -45,6 +47,6 @@ public class Count_Of_Node {
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTreeNode(nodes);
 
-        System.out.println(countOfNodes(root));
+        System.out.println(height(root));
     }
 }

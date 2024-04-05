@@ -1,6 +1,6 @@
-package Binary_Tree;
+package Tree;
 
-public class Sum_Of_Nodes {
+public class Count_Of_Node {
     static class Node {
         int data;
         Node left;
@@ -16,35 +16,35 @@ public class Sum_Of_Nodes {
     static class BinaryTree {
         static int idx = -1;
 
-        public static Node buildTree(int nodes[]) {
+        public static Node buildTreeNode(int nodes[]) {
             idx++;
             if (nodes[idx] == -1) {
                 return null;
             }
             Node newNode = new Node(nodes[idx]);
-            newNode.left = buildTree(nodes);
-            newNode.right = buildTree(nodes);
+            newNode.left = buildTreeNode(nodes);
+            newNode.right = buildTreeNode(nodes);
 
             return newNode;
         }
     }
 
-    public static int sumOfNodes(Node root) {
+    public static int countOfNodes(Node root) {
         if (root == null) {
             return 0;
         }
 
-        int leftSum = sumOfNodes(root.left);
-        int rightSum = sumOfNodes(root.right);
+        int leftNodes = countOfNodes(root.left);
+        int rightNodes = countOfNodes(root.right);
 
-        return leftSum + rightSum + root.data;
+        return leftNodes + rightNodes + 1;
     }
 
     public static void main(String[] args) {
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         BinaryTree tree = new BinaryTree();
-        Node root = tree.buildTree(nodes);
+        Node root = tree.buildTreeNode(nodes);
 
-        System.out.println(sumOfNodes(root));
+        System.out.println(countOfNodes(root));
     }
 }

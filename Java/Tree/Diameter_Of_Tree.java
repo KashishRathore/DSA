@@ -1,4 +1,4 @@
-package Binary_Tree;
+package Tree;
 
 // Number of Nodes in the longest path between 2 nodes
 

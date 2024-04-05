@@ -1,8 +1,6 @@
-package Binary_Tree;
+package Tree;
 
-// Inorder -> Left subtree --> Root --> Right subtree
-
-public class Inorder {
+public class Sum_Of_Nodes {
     static class Node {
         int data;
         Node left;
@@ -18,32 +16,35 @@ public class Inorder {
     static class BinaryTree {
         static int idx = -1;
 
-        public static Node buildTreeNode(int nodes[]) {
+        public static Node buildTree(int nodes[]) {
             idx++;
             if (nodes[idx] == -1) {
                 return null;
             }
             Node newNode = new Node(nodes[idx]);
-            newNode.left = buildTreeNode(nodes);
-            newNode.right = buildTreeNode(nodes);
+            newNode.left = buildTree(nodes);
+            newNode.right = buildTree(nodes);
 
             return newNode;
         }
     }
 
-    public static void inorder(Node root) {
+    public static int sumOfNodes(Node root) {
         if (root == null) {
-            return;
+            return 0;
         }
-        inorder(root.left);
-        System.out.print(root.data + " ");
-        inorder(root.right);
+
+        int leftSum = sumOfNodes(root.left);
+        int rightSum = sumOfNodes(root.right);
+
+        return leftSum + rightSum + root.data;
     }
 
     public static void main(String[] args) {
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         BinaryTree tree = new BinaryTree();
-        Node root = tree.buildTreeNode(nodes);
-        inorder(root);
+        Node root = tree.buildTree(nodes);
+
+        System.out.println(sumOfNodes(root));
     }
 }

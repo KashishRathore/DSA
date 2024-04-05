@@ -1,4 +1,4 @@
-package Binary_Tree;
+package Tree;
 
 public class Subtree_Of_Another_Tree {
     static class TreeNode{
@@ -50,7 +50,4 @@ public class Subtree_Of_Another_Tree {
         return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
-    public static void main(String[] args) {
-        
-    }
 }

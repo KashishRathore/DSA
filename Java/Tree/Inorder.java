@@ -1,8 +1,8 @@
-package Binary_Tree;
+package Tree;
 
-//post order -> left subtree --> right subtree --> root
+// Inorder -> Left subtree --> Root --> Right subtree
 
-public class Postorder {
+public class Inorder {
     static class Node {
         int data;
         Node left;
@@ -18,36 +18,32 @@ public class Postorder {
     static class BinaryTree {
         static int idx = -1;
 
-        public static Node buildTree(int nodes[]) {
+        public static Node buildTreeNode(int nodes[]) {
             idx++;
             if (nodes[idx] == -1) {
                 return null;
             }
             Node newNode = new Node(nodes[idx]);
-            newNode.left = buildTree(nodes);
-            newNode.right = buildTree(nodes);
+            newNode.left = buildTreeNode(nodes);
+            newNode.right = buildTreeNode(nodes);
 
             return newNode;
         }
     }
 
-    public static void preOrder(Node root) {
+    public static void inorder(Node root) {
         if (root == null) {
             return;
         }
-
-        preOrder(root.left);
-        preOrder(root.right);
+        inorder(root.left);
         System.out.print(root.data + " ");
-
+        inorder(root.right);
     }
 
     public static void main(String[] args) {
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         BinaryTree tree = new BinaryTree();
-        Node root = tree.buildTree(nodes);
-        System.out.println(root.data);
-        preOrder(root);
-
+        Node root = tree.buildTreeNode(nodes);
+        inorder(root);
     }
 }
