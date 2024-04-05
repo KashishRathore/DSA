@@ -8,7 +8,9 @@ public class Building_BST {
         Node right;
 
         Node(int key) {
-            this.data = data;
+            this.data = key;
+            this.left = null;
+            this.right = null;
         }
     }
 
@@ -21,8 +23,7 @@ public class Building_BST {
         if (root.data > key) {
             // left subtree
             root.left = insert(root.left, key);
-        } 
-        else {
+        } else {
             root.right = insert(root.right, key);
         }
 
@@ -34,7 +35,7 @@ public class Building_BST {
             return;
         }
         inorder(root.left);
-        System.out.println(root.data + " ");
+        System.out.print(root.data + " ");
         inorder(root.right);
     }
 
