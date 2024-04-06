@@ -45,11 +45,15 @@ public class Problem_Print_Range {
         }
         if (root.data >= X && root.data <= Y) {
             printInRange(root.left, X, Y);
-            System.out.println(root.data + " ");
+            System.out.print(root.data + " ");
             printInRange(root.right, X, Y);
-        } else if (root.data >= Y) {
+        } 
+
+        else if (root.data >= Y) {
             printInRange(root.left, X, Y);
-        } else {
+        } 
+
+        else {
             // root.data <= X
             printInRange(root.right, X, Y);
         }
