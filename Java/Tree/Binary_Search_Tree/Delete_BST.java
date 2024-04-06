@@ -63,7 +63,7 @@ public class Delete_BST {
             //case 3
             Node IS = inorderSuccessor(root.right);
             root.data = IS.data;
-            root.right = delete(root, IS.data);
+            root.right = delete(root.right, IS.data);
         }
         
         return root;
@@ -88,7 +88,7 @@ public class Delete_BST {
         inorder(root);
         System.out.println();
 
-        delete(root, 5);
+        delete(root, 10);
 
         inorder(root);
 
