@@ -39,25 +39,24 @@ public class Problem_Print_Range {
         inorder(root.right);
     }
 
-    public static void printInRange(Node root, int X, int Y){
-        if(root == null){
+    public static void printInRange(Node root, int X, int Y) {
+        if (root == null) {
             return;
         }
-        if(root.data >= X && root.data <= Y){
+        if (root.data >= X && root.data <= Y) {
             printInRange(root.left, X, Y);
             System.out.println(root.data + " ");
             printInRange(root.right, X, Y);
-        }
-        else if(root.data >= Y){
+        } else if (root.data >= Y) {
             printInRange(root.left, X, Y);
-        }
-        else{
+        } else {
             // root.data <= X
             printInRange(root.right, X, Y);
         }
     }
+
     public static void main(String[] args) {
-        int keys[] = { 5, 1, 3, 4, 2, 7 };
+        int keys[] = { 8, 5, 3, 1, 4, 6, 10, 11, 14 };
         Node root = null;
         for (int i = 0; i < keys.length; i++) {
             root = insert(root, keys[i]);
