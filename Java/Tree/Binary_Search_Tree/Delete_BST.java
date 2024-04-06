@@ -41,10 +41,10 @@ public class Delete_BST {
 
     public static Node delete(Node root, int key){
         if(root.data > key){
-            root.left = delete(root.left, key);
+             root.left = delete(root.left, key);
         }
         else if(root.data < key){
-            root.right = delete(root.right, key);
+             root.right = delete(root.right, key);
         }
         else{  //root.data == val
             //case 1 -> Leaf Node
@@ -88,8 +88,11 @@ public class Delete_BST {
         inorder(root);
         System.out.println();
 
-        delete(root, 4);
+        delete(root, 5);
 
         inorder(root);
+
+
+
     }
 }
