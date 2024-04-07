@@ -1,8 +1,8 @@
-package Tree;
+package Tree.Type_Of_Traversal;
 
-//post order -> left subtree --> right subtree --> root
+//pre order -> root --> left subtree --> right subtree
 
-public class Postorder {
+public class Preorder {
     static class Node {
         int data;
         Node left;
@@ -35,11 +35,9 @@ public class Postorder {
         if (root == null) {
             return;
         }
-
+        System.out.print(root.data + " ");
         preOrder(root.left);
         preOrder(root.right);
-        System.out.print(root.data + " ");
-
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Tree;
+package Tree.Type_Of_Traversal;
 
 // Inorder -> Left subtree --> Root --> Right subtree
 
