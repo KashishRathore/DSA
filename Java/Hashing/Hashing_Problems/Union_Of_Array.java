@@ -1,4 +1,4 @@
-package Hashing.Hashmap_Problems;
+package Hashing.Hashing_Problems;
 // Q-> Union of Two array
 import java.util.*;
 

@@ -1,10 +1,10 @@
-package Hashing.Hashmap_Problems;
+package Hashing.Hashing_Problems;
 // Q -> Given an integer array of size n, find all elements that appear more than (n/3) times.
 
 import java.util.*;
 
 public class Majority_Elements {
-    public static void majorityElement(int nums[]) {
+    public static void majorityElement(int nums[]) {  //O(n)
         HashMap<Integer, Integer> map = new HashMap<>();
 
         int n = nums.length;
