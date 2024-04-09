@@ -3,7 +3,7 @@ package Hashing.Hashmap_Problems;
 import java.util.*;
 
 public class Union_Of_Array {
-    public static void union(int arr1[], int arr2[]){
+    public static int union(int arr1[], int arr2[]){
         HashSet<Integer> set = new HashSet<>();
 
         for(int i=0; i<arr1.length; i++){
@@ -14,11 +14,11 @@ public class Union_Of_Array {
             set.add(arr2[j]);
         }
 
-        System.out.println(set.size());
-
         for(int key : set){
             System.out.print(key + " ");
         }
+
+        return set.size();
     }
     public static void main(String[] args) {
         int arr1[] = {7, 3, 9};
