@@ -24,7 +24,6 @@ public class Trie_Insert {
                 //add new node
                 root.children[idx] = new Node();
             }
-            root = root.children[idx];
 
             if(i == word.length()-1){
                 root.children[idx].endOfWord = true;
