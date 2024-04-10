@@ -28,16 +28,16 @@ public class Hashmap_Implementation {
         }
 
         private int hashFunction(K key) {
-            int bi = key.hashCode(); //return any integer number
+            int bi = key.hashCode(); // return any integer number
             return Math.abs(bi) % N; // 0 to N-1
         }
 
-        private int searchInLL(K key, int bi){
+        private int searchInLL(K key, int bi) {
             LinkedList<Node> ll = buckets[bi];
             int di = 0;
-            for(int i=0; i<ll.size(); i++){
-                if(ll.get(i).key == key){
-                    return i; //di
+            for (int i = 0; i < ll.size(); i++) {
+                if (ll.get(i).key == key) {
+                    return i; // di
                 }
             }
             return -1;
@@ -45,19 +45,19 @@ public class Hashmap_Implementation {
 
         @SuppressWarnings("unchecked")
 
-        private void rehash(){
+        private void rehash() {
             LinkedList<Node> oldBuckets[] = buckets;
             buckets = new LinkedList[N * 2];
 
-            for(int i=0; i<N*2; i++){
+            for (int i = 0; i < N * 2; i++) {
                 buckets[i] = new LinkedList<>();
             }
 
-            for(int i=0; i<oldBuckets.length; i++){
+            for (int i = 0; i < oldBuckets.length; i++) {
                 LinkedList<Node> ll = oldBuckets[i];
-                for(int j=0; j<oldBuckets.length; j++){
-                   Node node = ll.get(i);
-                   put(node.key, node.value);
+                for (int j = 0; j < oldBuckets.length; j++) {
+                    Node node = ll.get(i);
+                    put(node.key, node.value);
                 }
             }
         }
@@ -76,9 +76,9 @@ public class Hashmap_Implementation {
                 node.value = value;
             }
 
-            double lamda = (double)n/N;
-            if(lamda >= 2.0){
-                //rehashing
+            double lamda = (double) n / N;
+            if (lamda >= 2.0) {
+                // rehashing
             }
         }
 
@@ -101,7 +101,7 @@ public class Hashmap_Implementation {
 
             if (di == -1) {
                 // key doesn't exist
-               return null;
+                return null;
             } else {
                 // key exist
                 Node node = buckets[bi].remove(di);
@@ -126,9 +126,9 @@ public class Hashmap_Implementation {
 
         public ArrayList<K> keySet() {
             ArrayList<K> keys = new ArrayList<>();
-            for(int i=0; i<buckets.length; i++){ //bi
+            for (int i = 0; i < buckets.length; i++) { // bi
                 LinkedList<Node> ll = buckets[i];
-                for(int j=0; j<ll.size(); j++){  //di
+                for (int j = 0; j < ll.size(); j++) { // di
                     Node node = ll.get(j);
                     keys.add(node.key);
                 }
@@ -152,7 +152,7 @@ public class Hashmap_Implementation {
         map.put("US", 50);
 
         ArrayList<String> keys = map.keySet();
-        for(int i=0; i<keys.size(); i++){
+        for (int i = 0; i < keys.size(); i++) {
             System.out.println(keys.get(i) + " " + map.get(keys.get(i)));
         }
 

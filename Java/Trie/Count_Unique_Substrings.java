@@ -4,7 +4,7 @@ package Trie;
 
 public class Count_Unique_Substrings {
     // prefix-suffix concept
-    // all prefix of all suffix 
+    // all prefix of all suffix
     // all suffix of all prefix
 
     // step 1 -> Find all suffix of string

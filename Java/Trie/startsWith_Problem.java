@@ -48,7 +48,7 @@ public class startsWith_Problem {
     }
 
     public static void main(String[] args) {
-        String words[] = {"apple", "app", "mango", "man", "woman"};
+        String words[] = { "apple", "app", "mango", "man", "woman" };
 
         for (int i = 0; i < words.length; i++) {
             insert(words[i]);

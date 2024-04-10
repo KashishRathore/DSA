@@ -5,13 +5,13 @@ package Trie;
 //key = "an"    -> false   because n is not true in endOfWord
 
 public class Trie_Search {
-    static class Node{
-        Node [] children;
+    static class Node {
+        Node[] children;
         boolean endOfWord;
 
-        public Node(){
+        public Node() {
             children = new Node[26]; // a to z
-            for(int i=0; i<26; i++){
+            for (int i = 0; i < 26; i++) {
                 children[i] = null;
             }
             endOfWord = false;
@@ -20,16 +20,16 @@ public class Trie_Search {
 
     static Node root = new Node();
 
-    public static void insert(String word){
+    public static void insert(String word) {
         Node curr = root;
-        for(int i=0; i<word.length(); i++){
+        for (int i = 0; i < word.length(); i++) {
             int idx = word.charAt(i) - 'a';
-            if(curr.children[idx] == null){
-               //add new node
-               curr.children[idx] = new Node();
+            if (curr.children[idx] == null) {
+                // add new node
+                curr.children[idx] = new Node();
             }
 
-            if(i == word.length()-1){
+            if (i == word.length() - 1) {
                 curr.children[idx].endOfWord = true;
             }
 
@@ -37,17 +37,17 @@ public class Trie_Search {
         }
     }
 
-    //Search -> O(L)
-    public static boolean search(String key){
+    // Search -> O(L)
+    public static boolean search(String key) {
         Node curr = root;
-        for(int i=0; i<key.length(); i++){
+        for (int i = 0; i < key.length(); i++) {
             int idx = key.charAt(i) - 'a';
 
-            if(curr.children[idx] == null){
+            if (curr.children[idx] == null) {
                 return false;
             }
 
-            if(i == key.length()-1 && curr.children[idx].endOfWord == false){
+            if (i == key.length() - 1 && curr.children[idx].endOfWord == false) {
                 return false;
             }
             curr = curr.children[idx];
@@ -56,9 +56,9 @@ public class Trie_Search {
     }
 
     public static void main(String[] args) {
-        String words[] = {"the", "a", "there", "their", "any"};
+        String words[] = { "the", "a", "there", "their", "any" };
 
-        for(int i=0; i<words.length; i++){
+        for (int i = 0; i < words.length; i++) {
             insert(words[i]);
         }
 
