@@ -1,8 +1,7 @@
 package Trie;
 
-//Q -> Given an input String and a dictionary of words, find out if the input string can be broken into space seperated sequences of dictionary words. 
+public class startsWith_Problem {
 
-public class WordBreak_Problem {
     static class Node {
         Node[] children;
         boolean endOfWord;
@@ -35,16 +34,12 @@ public class WordBreak_Problem {
         }
     }
 
-    public static boolean search(String key) {
+    public static boolean startsWith(String prefix) {
         Node curr = root;
-        for (int i = 0; i < key.length(); i++) {
-            int idx = key.charAt(i) - 'a';
+        for (int i = 0; i < prefix.length(); i++) {
+            int idx = prefix.charAt(i) - 'a';
 
             if (curr.children[idx] == null) {
-                return false;
-            }
-
-            if (i == key.length() - 1 && curr.children[idx].endOfWord == false) {
                 return false;
             }
             curr = curr.children[idx];
@@ -52,31 +47,16 @@ public class WordBreak_Problem {
         return true;
     }
 
-    // word break
-
-    public static boolean wordBreak(String key) {
-        if (key.length() == 0) {
-            return true;
-        }
-
-        for (int i = 1; i <= key.length(); i++) {
-            String firstPart = key.substring(0, i);
-            String secPart = key.substring(i);
-            if (search(firstPart) && wordBreak(secPart)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static void main(String[] args) {
-        String words[] = { "i", "like", "sam", "samsung", "mobile", "ice" };
-        String key = "ilikesamsung";
+        String words[] = {"apple", "app", "mango", "man", "woman"};
 
         for (int i = 0; i < words.length; i++) {
             insert(words[i]);
         }
 
-        System.out.println(wordBreak(key));
+        System.out.println(startsWith("app"));
+        System.out.println(startsWith("moon"));
+        System.out.println(startsWith("man"));
+
     }
 }
