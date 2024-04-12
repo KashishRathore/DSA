@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Adjancency_List{
 
-    public class Edge{
+    static class Edge{
         int src;
         int dest;
         public Edge(int s, int d){
@@ -38,5 +38,12 @@ public class Adjancency_List{
          int V = 4;
 
          ArrayList<Edge> graph[] = new ArrayList[V];
+         createGraph(graph);
+
+         // Print 2's neighbours
+         for(int i=0; i<graph[2].size(); i++){
+            Edge e = graph[2].get(i);
+            System.out.println(e.src+ " to " + e.dest + " ");
+         }
     }
 }
